@@ -1,0 +1,24 @@
+#body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+#filling{
+    height: 70px;
+    width: 65px;
+    background-color: red;
+    border-radius: 37px;
+}
+#lace{
+    transform: rotate(30deg);
+
+}
+#lace::before{
+    content: 'aaaaaaaaa';
+    text-decoration-style: wavy;
+    text-decoration-color: black;
+    text-decoration-line: underline;
+    font-size: 3em;
+    color: transparent;
+}

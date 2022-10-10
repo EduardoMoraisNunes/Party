@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>...</title>
+    <style>
+        #a{
+            height: 536px;
+            width: 400px;
+            left: 37%;
+            position: relative;
+            z-index: 3;
+        }
+        #b{
+            left: 57%;
+            position: absolute;
+            top: 2%;
+            height: 150px;
+            width: 150px;
+            animation-fill-mode: forwards;
+            z-index: 3;
+        }
+        @keyframes dissapear {
+            100%{
+                opacity: 0%;
+            }
+        }
+        html, body{
+            height: 100%;
+            overflow: hidden;
+            background-color: rgb(0, 0, 0);
+        }
+        #background{
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            
+            top: 0%;
+            right: 0%;
+            opacity: 0%;
+        }
+        @keyframes translating {
+            3%{
+                background-image: linear-gradient(5deg, rgb(3, 0, 26), rgb(9, 2, 59), rgb(3, 0, 26));
+            }
+            6%{
+                background-image: linear-gradient(10deg, rgb(3, 0, 26), rgb(9, 2, 59), rgb(3, 0, 26));
+            }
+            9%{
+                background-image: linear-gradient(15deg, rgb(3, 0, 26), rgb(9, 2, 59), rgb(3, 0, 26));
+            }
+            12%{
+                background-image: linear-gradient(20deg, rgb(3, 0, 26), rgb(9, 2, 59), rgb(3, 0, 26));
+            }
+            15%{
+                background-image: linear-gradient(25deg, rgb(3, 0, 26), rgb(9, 2, 59), rgb(3, 0, 26));
+            }
+            18%{
+                background-image: linear-gradient(30deg, rgb(3, 0, 26), rgb(9, 2, 59), rgb(3, 0, 26));
+            }
+            21%{
+                background-image: linear-gradient(35deg, rgb(3, 0, 26), rgb(9, 2, 59), rgb(3, 0, 26));
+            }
+            24%{
+                background-image: linear-gradient(40deg, rgb(3, 0, 26), rgb(9, 2, 59), rgb(3, 0, 26));
+            }
+            27%{
+                background-image: linear-gradient(45deg, rgb(3, 0, 26), rgb(9, 2, 59), rgb(3, 0, 26));
+            }
+            30%{
+                background-image: linear-gradient(50deg, rgb(3, 0, 26), rgb(9, 2, 59), rgb(3, 0, 26));
+            }
+            33%{
+                background-image: linear-gradient(65deg, rgb(3, 0, 26), rgb(9, 2, 59), rgb(3, 0, 26));
+            }
+            36%{
+                background-image: linear-gradient(70deg, rgb(3, 0, 26), rgb(9, 2, 59), rgb(3, 0, 26));
+                opacity: 100%;
+            }
+            36%{
+                background-image: linear-gradient(75deg, rgb(3, 0, 26), rgb(9, 2, 59), rgb(3, 0, 26));
+            }
+            39%{
+                background-image: linear-gradient(80deg, rgb(3, 0, 26), rgb(9, 2, 59), rgb(3, 0, 26));
+            }
+            42%{
+                background-image: linear-gradient(85deg, rgb(3, 0, 26), rgb(9, 2, 59), rgb(3, 0, 26));
+            }
+            45%{
+                background-image: linear-gradient(90deg, rgb(3, 0, 26), rgb(9, 2, 59), rgb(3, 0, 26));
+            }
+            48%{
+                background-image: linear-gradient(95deg, rgb(3, 0, 26), rgb(9, 2, 59), rgb(3, 0, 26));
+            }
+            51%{
+                background-image: linear-gradient(100deg, rgb(3, 0, 26), rgb(9, 2, 59), rgb(3, 0, 26));
+            }
+            54%{
+                background-image: linear-gradient(105deg, rgb(3, 0, 26), rgb(9, 2, 59), rgb(3, 0, 26));
+            }
+            57%{
+                background-image: linear-gradient(110deg, rgb(3, 0, 26), rgb(9, 2, 59), rgb(3, 0, 26));
+                opacity: 100%;
+            }
+            60%{
+                background-image: linear-gradient(115deg, rgb(3, 0, 26), rgb(9, 2, 59), rgb(3, 0, 26));
+            }
+            63%{
+                background-image: linear-gradient(120deg, rgb(3, 0, 26), rgb(9, 2, 59), rgb(3, 0, 26));
+            }
+            66%{
+                background-image: linear-gradient(125deg, rgb(3, 0, 26), rgb(9, 2, 59), rgb(3, 0, 26));
+            }
+            69%{
+                background-image: linear-gradient(130deg, rgb(3, 0, 26), rgb(9, 2, 59), rgb(3, 0, 26));
+            }
+            72%{
+                background-image: linear-gradient(135deg, rgb(3, 0, 26), rgb(9, 2, 59), rgb(3, 0, 26));
+            }
+            75%{
+                background-image: linear-gradient(140deg, rgb(3, 0, 26), rgb(9, 2, 59), rgb(3, 0, 26));
+            }
+            78%{
+                background-image: linear-gradient(145deg, rgb(3, 0, 26), rgb(9, 2, 59), rgb(3, 0, 26));
+            }
+            81%{
+                background-image: linear-gradient(150deg, rgb(3, 0, 26), rgb(9, 2, 59), rgb(3, 0, 26));
+            }
+            84%{
+                background-image: linear-gradient(155deg, rgb(3, 0, 26), rgb(9, 2, 59), rgb(3, 0, 26));
+            }
+            87%{
+                background-image: linear-gradient(160deg, rgb(3, 0, 26), rgb(9, 2, 59), rgb(3, 0, 26));
+            }
+            90%{
+                background-image: linear-gradient(165deg, rgb(3, 0, 26), rgb(9, 2, 59), rgb(3, 0, 26));
+            }
+            100%{
+                background-image: linear-gradient(170deg, rgb(3, 0, 26), rgb(9, 2, 59), rgb(3, 0, 26));
+            }
+        }
+        #stars{
+            color: white;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .star{
+            display: inline;
+        }
+        @font-face {
+                font-family: genshin;
+                src: url(zh-cn.ttf);
+        }
+        #textbox{
+                font-family: genshin;
+                color: white;
+                text-align: center;
+                z-index: 4;
+                bottom: 5%;
+                position: relative;
+                height: 100%;
+                width: 100%;
+        }
+        .unused{
+                display: none;
+        }
+        @keyframes dialogup1 {
+            0%{
+                bottom: -4%;
+            }
+                100%{
+                        opacity: 100%;
+                        transform: rotateX(0deg);
+                        bottom: 0%;
+                }
+        } 
+        @keyframes dialogdown1 {
+                100%{
+                        opacity: 0%;
+                        transform: rotateX(-50deg);
+                        bottom: 4%;
+                }
+        }
+        @keyframes dialogup2 {
+                100%{
+                        opacity: 100%;
+                        transform: rotateX(0deg);
+                        bottom: 6%;
+                }
+        } 
+        @keyframes dialogdown2 {
+                100%{
+                        opacity: 0%;
+                        transform: rotateX(-50deg);
+                        bottom: 10%;
+                }
+        }   
+        /*2 bottom 6%
+        1 bottom -4%*/               
+        #line1{
+            position: relative;
+            bottom: -4%;
+            opacity: 0%;
+            transform: rotateX(-50deg);
+            /*animation: dialogup1 1s forwards, dialogdown1 1s 2s forwards;*/
+        }
+        #line2{
+            opacity: 0%;
+            transform: rotateX(-50deg);
+            bottom: 2%;
+            position: relative;
+            /*animation: dialogup2 1s 2s forwards, dialogdown2 1s 6s forwards;*/
+        }
+    </style>
+</head>
+<body>
+    <div id="interact">
+        <img id="a" src="albedo_canvas.png" alt="Finja que tem um Albedo aqui">
+        <img id="b" src="bubble.png" alt="Finja que tem um balão de fala aqui">
+    </div>
+    <div id="background"></div>
+    <div id="textbox">
+        <p id="name">⪻────────────────────❧Albedo☙────────────────────⪼</p>
+        <p id="line1">Happy Birthday.</p>
+        <p id="line2">You look especially happy, would you mind if I sketched you?</p>
+        <p id="line3" class="unused">The capacity of our brains is limited, so we are bound to forget things.</p>
+        <p id="line4" class="unused">But when an image is tranferred onto paper or canvas, the sketch becomes an extension of our memory.</p>
+        <p id="line5" class="unused">We can remeber that past feeling when we later look at the sketch</p>
+        <p class="unused">[noises]</p>
+        <p class="unused">If it takes a war to meet you then it was worth it</p>
+        <p class="unused">I miss you</p>
+        <p class="unused">It's been a while, right?</p>
+        <p class="unused">I will never be satisfied</p>
+        <p class="unused">Do you even care?</p>
+        <p class="unused">Aloukome</p>
+        <p class="unused">Alô come?</p>
+        <p class="unused">Come sem receio</p>
+        <p class="unused">Teu cú na reta meu pau sem freio jkjkjkjkj</p>
+        <p class="unused">Klee</p>
+        <p class="unused">Happy Birthday to you, happy birthday to you, happy birthday dear traveler... Happy birthday to you!</p>
+        <p class="unused">You're older than me right?</p>
+        <p class="unused">Feliz Aniversário</p>
+        <p class="unused">Você está especialmente feliz, você se importa se eu te desenhar?</p>
+        <p class="unused">A capacidade de nossos cerébros é limitada, então esquecemos das coisas com o tempo</p>
+        <p class="unused">Mas quando uma imagem é transferida ao papel ou tela, o desenho vira uma extensão de nossa memória</p>
+        <p class="unused">Assim nos lembraremos daquele sentimento quando olhamos para um desenho</p>
+        <p>[sons]</p>
+        <p class="unused">I will keep sending you memes!</p>
+        <p class="unused">Carnaval é em fevereiro</p>
+        <p class="unused">Não é possível que é no mês 10 o aniversário, né?</p>
+        <p class="unused">Pqp não anotei a data</p>
+        <p class="unused">Caralhooooooooo aaaaaaaaaaaa</p>
+        <p class="unused">Você ainda está lendo???? .-.</p>
+    </div>
+    <div id="stars">
+        <p class='star'>. &emsp;</p>
+    </div>
+    <script>
+        var dialog = new Audio("birth.ogg")
+        document.getElementById('interact').addEventListener("click", function(){
+            dialog.play()
+        dialog.addEventListener("playing", function(){
+            if(EventTarget.playing = true){
+                document.title = 'Happy Birthday'
+            document.getElementById('b').style.animation = 'dissapear 2s linear forwards'
+            document.getElementById('background').style.animation = 'translating 16s linear infinite forwards'
+            textroll()
+            function textroll(){
+                document.getElementById('line1').style.animation = 'dialogup1 1s forwards, dialogdown1 1s 2s forwards'
+                document.getElementById('line2').style.animation = 'dialogup2 1s 2s forwards, dialogdown2 1s 6s forwards'
+            }
+            setTimeout(intermission, 3000)
+            function intermission (){
+                document.getElementById('line1').innerHTML = 'The capacity of our brains is limited, so we are bound to forget things.'
+                document.getElementById('line1').style.animation = ''
+
+            }
+            setTimeout(textroll7, 5000)
+            function textroll7(){
+                document.getElementById('line1').style.animation = 'dialogup1 1s 1s forwards, dialogdown1 1s 6s forwards'
+            }
+            setTimeout(intermission2, 6500)
+            function intermission2 (){
+                document.getElementById('line2').innerHTML = 'But when an image is tranferred onto paper or canvas, the sketch becomes an extension of our memory.'
+                document.getElementById('line2').style.animation = ''
+
+            }
+            setTimeout(textroll14, 11000)
+            function textroll14(){
+                document.getElementById('line2').style.animation = 'dialogup2 1s forwards, dialogdown2 1s 7s forwards'
+            }
+            setTimeout(intermission3, 11600)
+            function intermission3 (){
+                document.getElementById('line1').innerHTML = 'We can remeber that past feeling when we later look at the sketch'
+                document.getElementById('line1').style.animation = ''
+
+            }
+            setTimeout(textroll16, 18000)
+            function textroll16(){
+                document.getElementById('line1').style.animation = 'dialogup1 1s forwards, dialogdown1 1s 5s forwards'
+            }
+            }
+        })
+            
+        })
+        document.getElementById('interact').addEventListener("mouseover", function(){
+                document.getElementById('b').style.backgroundImage = 'radial-gradient(white, white, transparent, transparent)'
+        })
+        document.getElementById('interact').addEventListener("mouseout", function(){
+                document.getElementById('b').style.backgroundImage = ''
+        })
+        
+    </script>
+</body>
+</html>
