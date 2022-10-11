@@ -215,6 +215,22 @@
             position: relative;
             /*animation: dialogup2 1s 2s forwards, dialogdown2 1s 6s forwards;*/
         }
+        #name::after{
+                content: "⪻────────────────────❧Albedo☙────────────────────⪼";
+                color: white;
+                }
+        @media only screen and (max-width: 900px) {
+            #name::after{
+                content: "⪻──────────❧Albedo☙───────────⪼";
+                color: white;
+                }
+                
+        }
+        #interact{
+            justify-content: center;
+            display: flex;
+            width: 59%;
+        }
     </style>
 </head>
 <body>
@@ -224,7 +240,7 @@
     </div>
     <div id="background"></div>
     <div id="textbox">
-        <p id="name">⪻────────────────────❧Albedo☙────────────────────⪼</p>
+        <p id="name"></p>
         <p id="line1">Happy Birthday.</p>
         <p id="line2">You look especially happy, would you mind if I sketched you?</p>
         <p id="line3" class="unused">The capacity of our brains is limited, so we are bound to forget things.</p>
@@ -248,7 +264,7 @@
         <p class="unused">A capacidade de nossos cerébros é limitada, então esquecemos das coisas com o tempo</p>
         <p class="unused">Mas quando uma imagem é transferida ao papel ou tela, o desenho vira uma extensão de nossa memória</p>
         <p class="unused">Assim nos lembraremos daquele sentimento quando olhamos para um desenho</p>
-        <p>[sons]</p>
+        <p class="unused">[sons]</p>
         <p class="unused">I will keep sending you memes!</p>
         <p class="unused">Carnaval é em fevereiro</p>
         <p class="unused">Não é possível que é no mês 10 o aniversário, né?</p>
@@ -256,10 +272,20 @@
         <p class="unused">Caralhooooooooo aaaaaaaaaaaa</p>
         <p class="unused">Você ainda está lendo???? .-.</p>
     </div>
-    <div id="stars">
+    <div class="unused" id="stars">
         <p class='star'>. &emsp;</p>
     </div>
     <script>
+        u
+        function u(){
+            console.log('uuuuuuuuuuuuu')
+        if (window.innerWidth < 960) {
+            document.getElementById('name').innerHTML = '⪻────────❧Albedo☙─────────⪼'
+            }
+            else{
+                return
+            }
+        }
         var dialog = new Audio("birth.ogg")
         document.getElementById('interact').addEventListener("click", function(){
             dialog.play()
