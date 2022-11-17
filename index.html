@@ -231,12 +231,29 @@
             display: flex;
             width: 59%;
         }
+        #interactold{
+            position: fixed;
+            width: 20%;
+            height: 20%;
+            z-index: 5;
+            left: -3%;
+            bottom: -13%;
+        }
+        #c{
+            position: absolute;
+            opacity: 100%;
+            width: 5vw;
+            height: 5vw;
+        }
     </style>
 </head>
 <body>
     <div id="interact">
         <img id="a" src="albedo_canvas.png" alt="Finja que tem um Albedo aqui">
         <img id="b" src="bubble.png" alt="Finja que tem um balão de fala aqui">
+    </div>
+    <div id="interactold">
+        <img id="c" src="sucrose500.webp" alt="Finja que alguém ainda está aqui">
     </div>
     <div id="background"></div>
     <div id="textbox">
@@ -271,6 +288,7 @@
         <p class="unused">Pqp não anotei a data</p>
         <p class="unused">Caralhooooooooo aaaaaaaaaaaa</p>
         <p class="unused">Você ainda está lendo???? .-.</p>
+        <p class="unused">Hoje é 29/11, certo??</p>
     </div>
     <div class="unused" id="stars">
         <p class='star'>. &emsp;</p>
@@ -289,9 +307,12 @@
         var dialog = new Audio("birth.ogg")
         document.getElementById('interact').addEventListener("click", function(){
             dialog.play()
-        dialog.addEventListener("playing", function(){
-            if(EventTarget.playing = true){
+        dialog.addEventListener("playing", function(e){
+            if(e.playing = true){
                 document.title = 'Happy Birthday'
+                document.getElementById('line1').innerHTML = 'Happy Birthday.'
+                document.getElementById('line2').innerHTML = 'You look especially happy, would you mind if I sketched you?'
+            console.log('help')
             document.getElementById('b').style.animation = 'dissapear 2s linear forwards'
             document.getElementById('background').style.animation = 'translating 16s linear infinite forwards'
             textroll()
@@ -303,6 +324,7 @@
             function intermission (){
                 document.getElementById('line1').innerHTML = 'The capacity of our brains is limited, so we are bound to forget things.'
                 document.getElementById('line1').style.animation = ''
+                console.log('IS THIS WORKING?')
 
             }
             setTimeout(textroll7, 5000)
@@ -327,7 +349,12 @@
             }
             setTimeout(textroll16, 18000)
             function textroll16(){
-                document.getElementById('line1').style.animation = 'dialogup1 1s forwards, dialogdown1 1s 5s forwards'
+                document.getElementById('line1').style.animation = 'dialogup1 1s forwards, dialogdown1 1s 1s forwards'
+            }
+            setTimeout(textrollremove, 24000)
+            function textrollremove(){
+                document.getElementById('line1').style.animation = ''
+                document.getElementById('line2').style.animation = ''
             }
             }
         })
@@ -339,6 +366,89 @@
         document.getElementById('interact').addEventListener("mouseout", function(){
                 document.getElementById('b').style.backgroundImage = ''
         })
+        //OLD
+        var dialogalone = new Audio("LosingYou.ogg")
+        document.getElementById('interactold').addEventListener("click", function(){
+            console.log('clicked')
+            dialogalone.play()
+        dialogalone.addEventListener("playing", function(e){
+                document.title = 'Happy Birthday..'
+            document.getElementById('b').style.animation = 'dissapear 2s linear forwards'
+            document.getElementById('background').style.animation = 'translating 16s linear infinite forwards'
+            document.getElementById('line1').innerHTML = "What's the point of studying alchemy when she's not here to see it anymore?"
+            document.getElementById('line2').innerHTML = 'The Wonderland idea was stupid anyway'
+            textrollold()
+            function textrollold(){
+                document.getElementById('line1').style.animation = 'dialogup1 1s 1s forwards, dialogdown1 1s 6s forwards'
+                document.getElementById('line2').style.animation = 'dialogup2 1s 6s forwards, dialogdown2 1s 9s forwards'
+            }
+            setTimeout(intermissionold, 7000)
+            function intermissionold (){
+                document.getElementById('line1').innerHTML = "I really was a fool, wasn't I?"
+                document.getElementById('line1').style.animation = ''
+
+            }
+            setTimeout(textroll7old, 8000)
+            function textroll7old(){
+                document.getElementById('line1').style.animation = 'dialogup1 1s 1s forwards, dialogdown1 1s 4s forwards'
+            }
+            setTimeout(intermission2old, 11000)
+            function intermission2old (){
+                document.getElementById('line2').innerHTML = 'Spending sleepless nights to build a dream for friends that have probably aready forgotten me...'
+                document.getElementById('line2').style.animation = ''
+
+            }
+            setTimeout(textroll14old, 13000)
+            function textroll14old(){
+                document.getElementById('line2').style.animation = 'dialogup2 1s forwards, dialogdown2 1s 5s forwards'
+            }
+            setTimeout(intermission3old, 14000)
+            function intermission3old (){
+                document.getElementById('line1').innerHTML = 'I just thought I could bring back what we had before...'
+                document.getElementById('line1').style.animation = ''
+
+            }
+            setTimeout(textroll23old, 19000)
+            function textroll23old(){
+                document.getElementById('line1').style.animation = 'dialogup1 1s forwards, dialogdown1 1s 5s forwards'
+            }
+            setTimeout(intermission30old, 19000)
+            function intermission30old (){
+                document.getElementById('line2').innerHTML = "But now I'm sorry I've wasted your precious time with my stupid delusions Mr. Albedo"
+                document.getElementById('line2').style.animation = ''
+
+            }
+            setTimeout(textroll30old, 25000)
+            function textroll30old(){
+                document.getElementById('line2').style.animation = 'dialogup2 1s forwards, dialogdown2 1s 6s forwards'
+            }
+            setTimeout(intermission74old, 27000)
+            function intermission74old (){
+                document.getElementById('line1').innerHTML = "I promisse I won't trouble you anymore"
+                document.getElementById('line1').style.animation = ''
+
+            }
+            setTimeout(textroll84old, 32000)
+            function textroll84old(){
+                document.getElementById('line1').style.animation = 'dialogup1 1s forwards, dialogdown1 1s 5s forwards'
+            }
+            setTimeout(intermission36old, 32000)
+            function intermission36old (){
+                document.getElementById('line2').innerHTML = "You can leave now"
+                document.getElementById('line2').style.animation = ''
+
+            }
+            setTimeout(textroll9old, 37000)
+            function textroll9old(){
+                document.getElementById('line2').style.animation = 'dialogup2 1s forwards, dialogdown2 1s 3s forwards'
+            }
+            })
+            setTimeout(textrollremoveold, 40000)
+            function textrollremoveold(){
+                document.getElementById('line1').style.animation = ''
+                document.getElementById('line2').style.animation = ''
+            }
+    })
         
     </script>
 </body>
