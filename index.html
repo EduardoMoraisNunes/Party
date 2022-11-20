@@ -230,6 +230,7 @@
             justify-content: center;
             display: flex;
             width: 59%;
+            display: none;
         }
         #interactold{
             position: fixed;
@@ -245,6 +246,286 @@
             width: 5vw;
             height: 5vw;
         }
+        #datesim{
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            width: 100%;
+            height: 100%;
+            background-image: url("Cabin_day.webp");
+            background-size: cover;
+        }
+        #textboxsim{
+            width: 66em;
+            height: 15em;
+            background-image: url("datesim_textbox.webp");
+            bottom: 5%;
+            position: absolute;
+            left: 9%;
+            background-size: cover;
+            transform: translate3d(0%, 113%, 0)
+        }
+        .textboxsim{
+            animation: "goingup" 1s forwards;
+        }
+        @keyframes goingup {
+            100%{
+                transform: translate3d(0%, 0%, 0)
+            }
+        }
+        @font-face {
+            font-family: namefont;
+            src: url(PORN\ FASHION\ trial.ttf);
+        }
+        #namesim{
+            font-size: 29pt;
+            font-family: 'namefont';
+            position: relative;
+            left: 16%;
+            color: white;
+            bottom: 7%;
+        }
+        @font-face {
+            font-family: textesim;
+            src: url("TT2020StyleE-Regular.ttf");
+        }
+        .textsim{
+            font-family: 'textesim';
+            font-size: 16pt;
+            position: relative;
+            left: 10%;
+            bottom: 16%;
+            width: 0%;
+            overflow: hidden;
+            white-space: nowrap;
+            letter-spacing: .15em;
+        }
+        .textsim1{
+            animation: 
+                'typing' 3.5s steps(40, end) forwards;
+        }
+        .textsim2{
+            animation: 
+                'typing' 3.5s 2s steps(40, end) forwards;
+        }
+        .textsim3{
+            animation: 
+                'typing' 3.5s 4s steps(40, end) forwards;
+        }
+        .textsim4{
+            animation: 
+                'typing' 3.5s 6.5s steps(40, end) forwards;
+        }
+        #chalk{
+            background-image: url('chalkboard.webp');
+            position: relative;
+            bottom: -18%;
+            width: 51em;
+            height: 50em;
+            background-size: contain;
+            background-repeat: no-repeat;
+            left: 20%;
+        }
+        #chr1{
+            background-image: url("him_lovesim.png");
+            background-repeat: no-repeat;
+            height: 45em;
+            width: 58em;
+            position: absolute;
+            bottom: -7%;
+            background-size: contain;
+            left: -35%;
+        }
+        .chr1{
+            animation: "run" 1s forwards;
+        }
+        @keyframes run {
+            100%{
+                left: 16%;
+            }
+        }
+        #fullscreenbtn{
+            position: fixed;
+            top: 2%;
+            right: 5%;
+            background-image: url("fullscreen.png");
+            height: 2em;
+            width: 2em;
+            border-radius: 50%;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        #choices{
+            position: absolute;
+            top: 11%;
+            height: 28em;
+            width: 28em;
+            left: 34%;
+            z-index: 5;
+            display: none;
+        }
+        .choice{
+            position: relative;
+            height: 13%;
+            width: 90%;
+            background-color: rgb(234, 226, 210);
+            top: 5%;
+            left: 5%;
+            box-shadow: 7px 5px 4px;
+        }
+        .choice:hover{
+            background-color: rgb(191, 183, 167);
+        }
+        .choicetext{  
+            text-align: center;
+            top: 17%;
+            position: relative;
+            font-family: "textesim";
+            font-size: 1.2em;
+        }
+        #t5{
+            width: 1px;
+            height: 1px;
+            background-image: url("himconcerned_lovesim.webp");
+        }
+        #t6{
+            width: 1px;
+            height: 1px;
+            background-image: url("himconfused_lovesim.webp");
+        }
+        #t7{
+            width: 1px;
+            height: 1px;
+            background-image: url("himwinking_lovesim.webp");
+        }
+        #t8{
+            width: 1px;
+            height: 1px;
+            background-image: url("himwtf_lovesim.webp");
+        }
+        #console{
+            width: 20em;
+            height: 11em;
+            position: fixed;
+            top: 0%;
+            left: 0%;
+            background: rgba(0, 0, 0, 0.3);
+            display: none;
+        }
+        #consoletext{
+            color: red;
+        }
+        #shadow{
+            background: rgba(0, 0, 0, 0.3);
+            position: fixed;
+            top: 0%;
+            left: 0%;
+            height: 100%;
+            width: 100%;
+        }
+        @keyframes jump {
+            0%{
+                transform: translate3d(0,0%,0);
+            }
+            50%{
+                transform: translate3d(0,-5%,0);
+            }
+            100%{
+                transform: translate3d(0,0%,0);
+            }
+        }
+        .jump{
+            animation: 'jump' 0.5s ;
+        }
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+    #date{
+        background-image: url("dateflag.webp");
+        background-size: cover;
+        height: 8em;
+        position: absolute;
+        top: -1%;
+        width: 5em;
+        right: 2%;
+    }
+    #datetext{
+        font-family: 'textesim';
+        width: 2.5em;
+        color: white;
+        font-size: 2em;
+        text-align: center;
+        top: -6px;
+        position: relative;
+    }
+    #loadpage{
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0%;
+        left: 0%;
+        background-color: brown;
+        display: none;
+    }
+    #saves{
+        height: 69%;
+        width: 40%;
+        top: 9%;
+        position: relative;
+        left: 5%;
+    }
+    .saveoff{
+        background-image: url("booksavefilegray.webp");
+        background-size: cover;
+        width: 8em;
+        height: 6em;
+        top: 2%;
+        left: 2%;
+        position: relative;
+        margin-right: 2%;
+        display: inline-block;
+    }
+    #saveon{
+        background-image: url("booksavefilegreen.webp");
+        background-size: cover;
+        display: inline-block;
+    }
+    #msg{
+        position: fixed;
+top: 39%;
+width: 19em;
+height: 5em;
+left: 27%;
+border-radius: 10px;
+background-color: white;
+z-index: 5;
+text-align: center;
+font-family: "textesim";
+font-size: 2em;
+    }
+    #msgbtn{
+        position: relative;
+background-color: green;
+color: white;
+font-family: "namefont";
+border-radius: 28px;
+width: 27%;
+left: 52%;
+top: -44%;
+    }
+    #msgbtn:hover{
+        background-color: darkgreen;
+    }
+    #msgbtn2{
+        position: relative;
+background-color: gray;
+color: white;
+font-family: "namefont";
+border-radius: 28px;
+width: 27%;
+left: 12%;
+    }
     </style>
 </head>
 <body>
@@ -293,7 +574,97 @@
     <div class="unused" id="stars">
         <p class='star'>. &emsp;</p>
     </div>
+    <div id="datesim">
+        <div id="savescreen"></div>
+        <div id="hud">
+            <div id="t5"></div>
+            <div id="t6"></div>
+            <div id="t7"></div>
+            <div id="t8"></div>
+        </div>
+        <div id="console">
+            <p id="consoletext">
+                File "pati/index/javascript.chr1", line 639, failed to load act(29).json, see real console for traceback
+            </p>
+        </div>
+        <div id="chalk"></div>
+        <div id="chr1"></div>
+        <div id="textboxsim">
+            <p id="namesim">Kairos</p>
+            <p class="textsim" id="textsim1">I'm so glad you finally came to our meeting!</p>
+            <p class="textsim" id="textsim2"></p>
+            <p class="textsim" id="textsim3"></p>
+            <p class="textsim" id="textsim4"></p>
+            <p class="unused">Where's everybody?</p>
+            <p class="unused">It's only me, and now you too!</p>
+            <p class="unused">Fuck this shit I'm out</p>
+            <p class="unused">WAITTTTTT---</p>
+            <p class="unused">So what are we going to do here?</p>
+            <p class="unused">Learn HTM, HTM- Damn I can't pronunce that letter</p>
+            <p class="unused">What are you doing?</p>
+            <p class="unused">What do you mean by that?</p>
+            <p class="unused">OH SHIT-</p>
+            <p class="unused">Is that meant to be me?</p>
+            <p class="unused">Huh?</p>
+    </div>
+        <div id="choices">
+            <div class="choice " id="choice1">
+                <p id="choicetext1" class="choicetext">Where's everybody?</p>
+            </div>
+            <div class="choice" id="choice2">
+                <p id="choicetext2" class="choicetext">Is that meant to be me?</p>
+            </div>
+            <div class="choice" id="choice3">
+                <p id="choicetext3" class="choicetext">What are you doing with your hand?</p>
+            </div>
+            <div class="choice" id="choice4">
+                <p id="choicetext4" class="choicetext">So what are we going to do here?</p>
+            </div>
+        </div>
+        
+        <div id="date">
+            <p id="datetext">DAY 29</p>
+        </div>
+        <div id="shadow"></div>~
+        <div id="loadpage">
+            <div id="saves">
+                <div class="saveoff"></div>
+                <div class="saveoff"></div>
+                <div class="saveoff"></div>
+                <div class="saveoff"></div>
+                <div class="saveoff"></div>
+                <div class="saveoff"></div>
+                <div class="saveoff"></div>
+                <div class="saveoff"></div>
+                <div class="saveoff"></div>
+                <div class="saveoff"></div>
+                <div class="saveoff"></div>
+                <div class="saveoff"></div>
+                <div class="saveoff" id="saveon"></div>
+                <div class="saveoff"></div>
+                <div class="saveoff"></div>
+            </div>
+        </div>
+        <div id="msg">
+            <p>Save File found, continue??</p>
+            <div id="msgbtn2">
+                <p>NO</p>
+            </div>
+            <div id="msgbtn">
+                <p>YES</p>
+            </div>
+        </div>
     <script>
+        var ava = localStorage.getItem("avatar")
+        check()
+        function check(){
+            if(ava == 1){
+                document.getElementById('interactold').innerHTML=''
+            }
+            else{
+                return
+            }
+        }
         u
         function u(){
             console.log('uuuuuuuuuuuuu')
@@ -349,7 +720,7 @@
             }
             setTimeout(textroll16, 18000)
             function textroll16(){
-                document.getElementById('line1').style.animation = 'dialogup1 1s forwards, dialogdown1 1s 1s forwards'
+                document.getElementById('line1').style.animation = 'dialogup1 1s forwards, dialogdown1 1s 3s forwards'
             }
             setTimeout(textrollremove, 24000)
             function textrollremove(){
@@ -447,9 +818,166 @@
             function textrollremoveold(){
                 document.getElementById('line1').style.animation = ''
                 document.getElementById('line2').style.animation = ''
+                document.body.innerHTML=""
+                localStorage.setItem("avatar", 1)
             }
     })
-        
+    //Date sim part
+    var camping = new Audio("Camping Time!.ogg")
+    camping.loop = true
+    c1 = document.getElementById('choice1')
+    ct1 = document.getElementById('choicetext1')
+    c2 = document.getElementById('choice2')
+    ct2 = document.getElementById('choicetext2')
+    c3 = document.getElementById('choice3')
+    ct3 = document.getElementById('choicetext3')
+    c4 = document.getElementById('choice4')
+    ct4 = document.getElementById('choicetext4')
+    ts1 = document.getElementById('textsim1')
+    ts2 = document.getElementById('textsim2')
+    ts3 = document.getElementById('textsim3')
+    ts4 = document.getElementById('textsim4')
+    chr = document.getElementById('chr1')
+    btn()
+    function btn(){
+        document.getElementById('msgbtn').addEventListener("click", function(){
+            camping.play()
+            document.documentElement.requestFullscreen()
+            document.getElementById("msg").style.display = "none"
+            document.getElementById("shadow").style.display = "none"
+            document.getElementById('chr1').classList.add("chr1")
+            document.getElementById('textboxsim').classList.add("textboxsim")  
+            setTimeout(() => {
+                document.getElementById('textsim1').classList.add("textsim1")
+                document.getElementById('chr1').style.left = "16%"
+            }, 1000);
+            setTimeout(() => {
+                choiceactivate()
+            }, 3400);
+        })
+    }
+    //choiceactivate()
+    function choiceactivate(){
+        document.getElementById('choices').style.display = 'block'
+        c1.addEventListener("click", event=>{
+            document.getElementById('chr1').classList.add("jump")
+            document.getElementById('textsim1').classList.remove("textsim1")
+            void document.getElementById('textsim1').offsetWidth;
+            document.getElementById('textsim1').classList.add("textsim1")
+            document.getElementById('textsim2').classList.remove("textsim2")
+            void document.getElementById('textsim2').offsetWidth;
+            document.getElementById('textsim2').classList.add("textsim2")
+            document.getElementById('textsim3').classList.remove("textsim3")
+            void document.getElementById('textsim3').offsetWidth;
+            document.getElementById('textsim3').classList.add("textsim3")
+            ts1.innerHTML = "It's only me, you and everybody who's watching"
+            ts2.innerHTML = "you through that door behind you. It doesn't matter"
+            ts3.innerHTML = "if it's closed or opened WE see everthing!"
+            document.getElementById('chr1').style.backgroundImage = "url('himwinking_lovesim.webp')"
+            console.log('Fiquei com preguiça e tava sem tempo e escrevi qualquer coisa')
+            document.getElementById('choices').style.display = 'none'
+            document.getElementById('shadow').style.display = 'none'
+            setTimeout(() => { 
+                document.getElementById('console').style.display = 'block'
+                document.getElementById('chr1').style.display = 'none'
+                document.getElementById('textboxsim').style.backgroundImage = "url(datesim_textboxold.webp)"
+                ts1.innerHTML = ""
+                ts2.innerHTML = ""
+                ts3.innerHTML = ""
+                document.getElementById('namesim').innerHTML = ""
+                camping.pause()
+            }, 7000);
+        })
+        c2.addEventListener("click", event=>{
+            document.getElementById('chr1').classList.add("jump")
+            document.getElementById('textsim1').classList.remove("textsim1")
+            void document.getElementById('textsim1').offsetWidth;
+            document.getElementById('textsim1').classList.add("textsim1")
+            document.getElementById('textsim2').classList.remove("textsim2")
+            void document.getElementById('textsim2').offsetWidth;
+            document.getElementById('textsim2').classList.add("textsim2")
+            document.getElementById('textsim3').classList.remove("textsim3")
+            void document.getElementById('textsim3').offsetWidth;
+            document.getElementById('textsim3').classList.add("textsim3")
+            ts1.innerHTML = "What?"
+            document.getElementById('chr1').style.backgroundImage = "url('himconfused_lovesim.webp')"
+            console.log('Este simulador foi feito no dia 19/11')
+            document.getElementById('choices').style.display = 'none'
+            document.getElementById('shadow').style.display = 'none'
+            setTimeout(() => { 
+                document.getElementById('console').style.display = 'block'
+                document.getElementById('chr1').style.display = 'none'
+                document.getElementById('textboxsim').style.backgroundImage = "url(datesim_textboxold.webp)"
+                ts1.innerHTML = ""
+                ts2.innerHTML = ""
+                ts3.innerHTML = ""
+                ts4.innerHTML = ""
+                document.getElementById('namesim').innerHTML = ""
+                camping.pause()
+            }, 1200);
+        })
+        c3.addEventListener("click", event=>{
+            document.getElementById('chr1').classList.add("jump")
+            document.getElementById('textsim1').classList.remove("textsim1")
+            void document.getElementById('textsim1').offsetWidth;
+            document.getElementById('textsim1').classList.add("textsim1")
+            document.getElementById('textsim2').classList.remove("textsim2")
+            void document.getElementById('textsim2').offsetWidth;
+            document.getElementById('textsim2').classList.add("textsim2")
+            document.getElementById('textsim3').classList.remove("textsim3")
+            void document.getElementById('textsim3').offsetWidth;
+            document.getElementById('textsim3').classList.add("textsim3")
+            ts1.innerHTML = "What do you mean by that? OH SHIT-"
+            document.getElementById('chr1').style.backgroundImage = "url('himwtf_lovesim.webp')"
+            console.log('SJFAFWLFKEGVKEK OK??')
+            document.getElementById('choices').style.display = 'none'
+            document.getElementById('shadow').style.display = 'none'
+            setTimeout(() => { 
+                document.getElementById('console').style.display = 'block'
+                document.getElementById('chr1').style.display = 'none'
+                document.getElementById('textboxsim').style.backgroundImage = "url(datesim_textboxold.webp)"
+                ts1.innerHTML = ""
+                ts2.innerHTML = ""
+                ts3.innerHTML = ""
+                document.getElementById('namesim').innerHTML = ""
+                camping.pause()
+            }, 1200);
+        })
+        c4.addEventListener("click", event=>{
+            document.getElementById('chr1').classList.add("jump")
+            document.getElementById('textsim1').classList.remove("textsim1")
+            void document.getElementById('textsim1').offsetWidth;
+            document.getElementById('textsim1').classList.add("textsim1")
+            document.getElementById('textsim2').classList.remove("textsim2")
+            void document.getElementById('textsim2').offsetWidth;
+            document.getElementById('textsim2').classList.add("textsim2")
+            document.getElementById('textsim3').classList.remove("textsim3")
+            void document.getElementById('textsim3').offsetWidth;
+            document.getElementById('textsim3').classList.add("textsim3")
+            document.getElementById('textsim4').classList.remove("textsim4")
+            void document.getElementById('textsim4').offsetWidth;
+            document.getElementById('textsim4').classList.add("textsim4")
+            ts1.innerHTML = "Learn HTM, HTM- Damn I can't pronunce that letter,"
+            ts2.innerHTML = "wait why can't I proununce it, I've never had this"
+            ts3.innerHTML = "problem before, maybe it's a acquired behaviour"
+            ts4.innerHTML = "but that's weird the only interaction- Wait-"
+            document.getElementById('chr1').style.backgroundImage = "url('himconcerned_lovesim.webp')"
+            console.log('E aí aprendeu a escrever o L?')
+            document.getElementById('choices').style.display = 'none'
+            document.getElementById('shadow').style.display = 'none'
+            setTimeout(() => { 
+                document.getElementById('console').style.display = 'block'
+                document.getElementById('chr1').style.display = 'none'
+                document.getElementById('textboxsim').style.backgroundImage = "url(datesim_textboxold.webp)"
+                ts1.innerHTML = ""
+                ts2.innerHTML = ""
+                ts3.innerHTML = ""
+                ts4.innerHTML = ""
+                document.getElementById('namesim').innerHTML = ""
+                camping.pause()
+            }, 9200);
+        })
+    }
     </script>
 </body>
 </html>
