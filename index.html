@@ -230,7 +230,6 @@
             justify-content: center;
             display: flex;
             width: 59%;
-            display: none;
         }
         #interactold{
             position: fixed;
@@ -239,6 +238,7 @@
             z-index: 5;
             left: -3%;
             bottom: -13%;
+            display: none;
         }
         #c{
             position: absolute;
@@ -254,6 +254,7 @@
             height: 100%;
             background-image: url("Cabin_day.webp");
             background-size: cover;
+            display: none;
         }
         #textboxsim{
             width: 66em;
@@ -526,9 +527,31 @@ border-radius: 28px;
 width: 27%;
 left: 12%;
     }
+    #all{
+        height: 100%;
+        width: 100%;
+    }
+    #change{
+        position: fixed;
+        margin: 0 auto;
+        height: 100%;
+        width: 100%;
+        background-image: url("bingus.webp");
+        background-size: cover;
+        display: none;
+        color: white;
+text-align: center;
+font-family: "command";
+font-size: 3em;
+    }
+    @font-face {
+        font-family: command;
+        src: url(EnterCommand.ttf);
+    }
     </style>
 </head>
 <body>
+    <div id="all">
     <div id="interact">
         <img id="a" src="albedo_canvas.png" alt="Finja que tem um Albedo aqui">
         <img id="b" src="bubble.png" alt="Finja que tem um balão de fala aqui">
@@ -584,7 +607,7 @@ left: 12%;
         </div>
         <div id="console">
             <p id="consoletext">
-                File "pati/index/javascript.chr1", line 639, failed to load act(29).json, see real console for traceback
+                File "pati/index/javascript.chr1", line 639, failed to load act(29).json, see real console for traceback <br> Please Restart the game
             </p>
         </div>
         <div id="chalk"></div>
@@ -625,7 +648,7 @@ left: 12%;
         <div id="date">
             <p id="datetext">DAY 29</p>
         </div>
-        <div id="shadow"></div>~
+        <div id="shadow"></div>
         <div id="loadpage">
             <div id="saves">
                 <div class="saveoff"></div>
@@ -654,22 +677,33 @@ left: 12%;
                 <p>YES</p>
             </div>
         </div>
+    </div>
+    </div>
+    <div id="change">
+        <p>Computer pls</p>
+    </div>
     <script>
         var ava = localStorage.getItem("avatar")
         check()
         function check(){
             if(ava == 1){
-                document.getElementById('interactold').innerHTML=''
+                document.getElementById('interact').innerHTML=''
+                document.getElementById('datesim').style.display = 'block'
+            }
+            if(ava == 0){
+                document.getElementById('interactold').style.display = 'block'
             }
             else{
                 return
             }
         }
-        u
+        u()
         function u(){
             console.log('uuuuuuuuuuuuu')
         if (window.innerWidth < 960) {
             document.getElementById('name').innerHTML = '⪻────────❧Albedo☙─────────⪼'
+            document.getElementById('change').style.display = 'block'
+            document.getElementById('all').style.display = 'none'
             }
             else{
                 return
@@ -726,6 +760,7 @@ left: 12%;
             function textrollremove(){
                 document.getElementById('line1').style.animation = ''
                 document.getElementById('line2').style.animation = ''
+                localStorage.setItem("avatar", 1)
             }
             }
         })
@@ -742,6 +777,7 @@ left: 12%;
         document.getElementById('interactold').addEventListener("click", function(){
             console.log('clicked')
             dialogalone.play()
+            localStorage.removeItem("avatar")
         dialogalone.addEventListener("playing", function(e){
                 document.title = 'Happy Birthday..'
             document.getElementById('b').style.animation = 'dissapear 2s linear forwards'
@@ -819,7 +855,7 @@ left: 12%;
                 document.getElementById('line1').style.animation = ''
                 document.getElementById('line2').style.animation = ''
                 document.body.innerHTML=""
-                localStorage.setItem("avatar", 1)
+                
             }
     })
     //Date sim part
@@ -843,6 +879,7 @@ left: 12%;
         document.getElementById('msgbtn').addEventListener("click", function(){
             camping.play()
             document.documentElement.requestFullscreen()
+            screen.orientation.lock('landscape');
             document.getElementById("msg").style.display = "none"
             document.getElementById("shadow").style.display = "none"
             document.getElementById('chr1').classList.add("chr1")
@@ -858,8 +895,31 @@ left: 12%;
     }
     //choiceactivate()
     function choiceactivate(){
-        document.getElementById('choices').style.display = 'block'
-        c1.addEventListener("click", event=>{
+        checkforrepeat()
+        function checkforrepeat(){
+        c1check = JSON.parse(localStorage.getItem("c1"))
+        c2check = JSON.parse(localStorage.getItem("c2"))
+        c3check = JSON.parse(localStorage.getItem("c3"))
+        c4check = JSON.parse(localStorage.getItem("c4"))
+        yuchk = c1check + c2check + c3check + c4check
+        if(yuchk == 4){
+            localStorage.setItem("avatar", 0)
+            localStorage.removeItem("c1")
+                localStorage.removeItem("c2")
+                localStorage.removeItem("c3")
+                localStorage.removeItem("c4")
+        }
+        else{
+            return
+        }
+    }
+        checkvar()
+        function checkvar(){
+            if(c1check == 1){
+                document.getElementById("choice1").style.backgroundColor = "rgb(191, 183, 167)"
+            }
+            else{
+                c1.addEventListener("click", event=>{
             document.getElementById('chr1').classList.add("jump")
             document.getElementById('textsim1').classList.remove("textsim1")
             void document.getElementById('textsim1').offsetWidth;
@@ -871,10 +931,9 @@ left: 12%;
             void document.getElementById('textsim3').offsetWidth;
             document.getElementById('textsim3').classList.add("textsim3")
             ts1.innerHTML = "It's only me, you and everybody who's watching"
-            ts2.innerHTML = "you through that door behind you. It doesn't matter"
-            ts3.innerHTML = "if it's closed or opened WE see everthing!"
+            ts2.innerHTML = "you through that door behind you!"
             document.getElementById('chr1').style.backgroundImage = "url('himwinking_lovesim.webp')"
-            console.log('Fiquei com preguiça e tava sem tempo e escrevi qualquer coisa')
+            console.log('Fiquei com preguiça e tava sem tempo e escrevi qualquer coisa, recarrega a página aí')
             document.getElementById('choices').style.display = 'none'
             document.getElementById('shadow').style.display = 'none'
             setTimeout(() => { 
@@ -886,8 +945,19 @@ left: 12%;
                 ts3.innerHTML = ""
                 document.getElementById('namesim').innerHTML = ""
                 camping.pause()
-            }, 7000);
+            }, 4000);
+            localStorage.setItem("c1", "1")
+            checkforrepeat()
         })
+            }
+        }
+        document.getElementById('choices').style.display = 'block'
+        checkvar2()
+        function checkvar2(){
+            if(c2check == 1){
+                document.getElementById("choice2").style.backgroundColor = "rgb(191, 183, 167)"
+            }
+            else{
         c2.addEventListener("click", event=>{
             document.getElementById('chr1').classList.add("jump")
             document.getElementById('textsim1').classList.remove("textsim1")
@@ -915,7 +985,15 @@ left: 12%;
                 document.getElementById('namesim').innerHTML = ""
                 camping.pause()
             }, 1200);
-        })
+            localStorage.setItem("c2", "1")
+            checkforrepeat()
+        })}}
+        checkvar3()
+        function checkvar3(){
+            if(c3check == 1){
+                document.getElementById("choice3").style.backgroundColor = "rgb(191, 183, 167)"
+            }
+            else{
         c3.addEventListener("click", event=>{
             document.getElementById('chr1').classList.add("jump")
             document.getElementById('textsim1').classList.remove("textsim1")
@@ -929,7 +1007,7 @@ left: 12%;
             document.getElementById('textsim3').classList.add("textsim3")
             ts1.innerHTML = "What do you mean by that? OH SHIT-"
             document.getElementById('chr1').style.backgroundImage = "url('himwtf_lovesim.webp')"
-            console.log('SJFAFWLFKEGVKEK OK??')
+            console.log('É dia 20/11 e a cada dia a data chega mais perto, tô sem ideias e não sei mais o que fazer, no momento tô pensando em como juntar as telas, caso esteja lendo isso... Feliz aniversário!')
             document.getElementById('choices').style.display = 'none'
             document.getElementById('shadow').style.display = 'none'
             setTimeout(() => { 
@@ -942,7 +1020,15 @@ left: 12%;
                 document.getElementById('namesim').innerHTML = ""
                 camping.pause()
             }, 1200);
-        })
+            localStorage.setItem("c3", "1")
+            checkforrepeat()
+        })}}
+        checkvar4()
+        function checkvar4(){
+            if(c4check == 1){
+                document.getElementById("choice4").style.backgroundColor = "rgb(191, 183, 167)"
+            }
+            else{
         c4.addEventListener("click", event=>{
             document.getElementById('chr1').classList.add("jump")
             document.getElementById('textsim1').classList.remove("textsim1")
@@ -976,7 +1062,9 @@ left: 12%;
                 document.getElementById('namesim').innerHTML = ""
                 camping.pause()
             }, 9200);
-        })
+            localStorage.setItem("c4", "1")
+            checkforrepeat()
+        })}}
     }
     </script>
 </body>
