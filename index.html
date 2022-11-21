@@ -219,13 +219,6 @@
                 content: "⪻────────────────────❧Albedo☙────────────────────⪼";
                 color: white;
                 }
-        @media only screen and (max-width: 900px) {
-            #name::after{
-                content: "⪻───────❧Albedo☙────────⪼";
-                color: white;
-                }
-                
-        }
         #interact{
             justify-content: center;
             display: flex;
@@ -268,6 +261,7 @@
         }
         .textboxsim{
             animation: "goingup" 1s forwards;
+            -webkit-animation: "goingup" 1s forwards;
         }
         @keyframes goingup {
             100%{
@@ -304,17 +298,25 @@
         .textsim1{
             animation: 
                 'typing' 3.5s steps(40, end) forwards;
+                -webkit-animation: 
+                'typing' 3.5s steps(40, end) forwards;
         }
         .textsim2{
             animation: 
+                'typing' 3.5s 2s steps(40, end) forwards;
+                -webkit-animation: 
                 'typing' 3.5s 2s steps(40, end) forwards;
         }
         .textsim3{
             animation: 
                 'typing' 3.5s 4s steps(40, end) forwards;
+                -webkit-animation: 
+                'typing' 3.5s 4s steps(40, end) forwards;
         }
         .textsim4{
             animation: 
+                'typing' 3.5s 6.5s steps(40, end) forwards;
+                -webkit-animation: 
                 'typing' 3.5s 6.5s steps(40, end) forwards;
         }
         #chalk{
@@ -339,6 +341,7 @@
         }
         .chr1{
             animation: "run" 1s forwards;
+            -webkit-animation: "run" 1s forwards;
         }
         @keyframes run {
             100%{
@@ -443,6 +446,7 @@
         }
         .jump{
             animation: 'jump' 0.5s ;
+            -webkit-animation: 'jump' 0.5s ;
         }
 @keyframes typing {
   from { width: 0 }
@@ -554,6 +558,51 @@ font-size: 3em;
         font-family: command;
         src: url(EnterCommand.ttf);
     }
+    @media screen and (max-width: 900px) {
+            #name::after{
+                content: "⪻───────❧Albedo☙────────⪼";
+                color: white;
+                }
+            #chalk{
+                position: absolute;
+                bottom: -3%;
+                width: 60%;
+                height: 86%;
+            }    
+            #chr1{
+                height: 110%;
+                width: 41%;
+                bottom: -15%;
+                left: -100%;
+            }
+            #msg{
+                left: 4%;
+                top: 23%;
+                width: 10em;
+                height: 6em;
+            }
+            #msgbtn{
+                top: -37%;
+            }
+            #textboxsim{
+                width: 86%;
+                height: 41%;
+                left: 5%;
+            }
+            #namesim{
+                font-size: 21.2pt;
+            }
+            .textsim{
+                bottom: 19%;
+                font-size: 12pt;
+            }
+            #choices{
+                top: -3%;
+                left: 27%;
+                height: 103%;
+                width: 51%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -614,7 +663,7 @@ font-size: 3em;
         </div>
         <div id="console">
             <p id="consoletext">
-                File "pati/index/javascript.chr1", line 639, failed to load act(29).json, see real console for traceback <br> Please Restart the game
+                File "pati/index/javascript.chr1", line 639, failed to load act(29).json, see real console for traceback <br> Press F5 to restart the game
             </p>
         </div>
         <div id="chalk"></div>
@@ -705,7 +754,7 @@ font-size: 3em;
                 return
             }
         }
-        u()
+        //u()
         function u(){
             console.log('uuuuuuuuuuuuu')
         if (window.innerWidth < 960) {
