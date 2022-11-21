@@ -602,6 +602,33 @@ font-size: 3em;
                 height: 103%;
                 width: 51%;
             }
+            
+        }
+        #blinkbitch{
+                position: absolute;
+right: 17%;
+bottom: 7%;
+font-size: 1.4em;
+color: darkgreen;
+opacity: 0%;
+            }
+        .blinkbitch{
+            animation: 'blinking' 2s infinite linear;
+            -webkit-animation: 'blinking' 2s infinite ease-in-out;
+        }
+        @keyframes blinking {
+            0%{
+                opacity: 0%;
+                right: 17%;
+            }
+            50%{
+                opacity: 100%;
+                right: 16%;
+            }
+            100%{
+                opacity: 0%;
+                right: 17%;
+            }
         }
     </style>
 </head>
@@ -685,6 +712,7 @@ font-size: 3em;
             <p class="unused">OH SHIT-</p>
             <p class="unused">Is that meant to be me?</p>
             <p class="unused">Huh?</p>
+            <p id="blinkbitch">▶</p>
     </div>
         <div id="choices">
             <div class="choice " id="choice1">
@@ -974,15 +1002,19 @@ font-size: 3em;
                 document.getElementById('chr1').style.left = "16%"
             }, 1000);
             setTimeout(() => {
-                choiceactivate()
+                document.getElementById('datesim').addEventListener("click", choiceactivate)
+                document.getElementById('blinkbitch').classList.add("blinkbitch")
             }, 3400);
         })
     }
     //choiceactivate()
     function choiceactivate(){
+        document.getElementById('datesim').removeEventListener("click", choiceactivate)
+        
+        document.getElementById("shadow").style.display = "block"
         checkforrepeat()
         function checkforrepeat(){
-        document.getElementById("shadow").style.display = "block"
+        document.getElementById('blinkbitch').classList.remove("blinkbitch")
         c1check = JSON.parse(localStorage.getItem("c1"))
         c2check = JSON.parse(localStorage.getItem("c2"))
         c3check = JSON.parse(localStorage.getItem("c3"))
