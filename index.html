@@ -404,6 +404,11 @@
             height: 1px;
             background-image: url("himwtf_lovesim.webp");
         }
+        #t9{
+            width: 1px;
+            height: 1px;
+            background-image: url("datesim_textboxold.webp");
+        }
         #console{
             width: 20em;
             height: 11em;
@@ -412,6 +417,7 @@
             left: 0%;
             background: rgba(0, 0, 0, 0.3);
             display: none;
+            z-index: 4;
         }
         #consoletext{
             color: red;
@@ -604,6 +610,7 @@ font-size: 3em;
             <div id="t6"></div>
             <div id="t7"></div>
             <div id="t8"></div>
+            <div id="t9"></div>
         </div>
         <div id="console">
             <p id="consoletext">
@@ -688,6 +695,7 @@ font-size: 3em;
         function check(){
             if(ava == 1){
                 document.getElementById('interact').innerHTML=''
+                document.getElementById('textbox').style.display = 'none'
                 document.getElementById('datesim').style.display = 'block'
             }
             if(ava == 0){
@@ -701,7 +709,37 @@ font-size: 3em;
         function u(){
             console.log('uuuuuuuuuuuuu')
         if (window.innerWidth < 960) {
-            document.getElementById('name').innerHTML = '⪻────────❧Albedo☙─────────⪼'
+           //document.getElementById('name').innerHTML = '⪻────────❧Albedo☙─────────⪼'
+            document.getElementById('chalk').style.position = 'absolute' 
+            document.getElementById('chalk').style.bottom = '-3%'
+            document.getElementById('chalk').style.width = '31em'
+            document.getElementById('chalk').style.height = '21em'
+            document.getElementById('chr1').style.height = '26em'
+            document.getElementById('chr1').style.width = '21em'
+            document.getElementById('chr1').style.bottom= '-15%'
+            document.getElementById('chr1').style.left = '-100%'
+            document.getElementById('msg').style.left = '4%'
+            document.getElementById('msg').style.top = '23%'
+            document.getElementById('msg').style.width = '10em'
+            document.getElementById('msg').style.height = '6em'
+            document.getElementById('msgbtn').style.top = '-37%'
+            document.getElementById('textboxsim').style.width = '42em'
+            document.getElementById('textboxsim').style.height = '10em'
+            document.getElementById('textboxsim').style.bottom = '5%'
+            document.getElementById('textboxsim').style.left = '9%'
+            document.getElementById('namesim').style.fontSize = '20pt'
+            document.getElementById('textsim1').style.bottom = '21%'
+            document.getElementById('textsim1').style.fontSize = '12pt'
+            document.getElementById('textsim2').style.bottom = '21%'
+            document.getElementById('textsim2').style.fontSize = '12pt'
+            document.getElementById('textsim3').style.bottom = '21%'
+            document.getElementById('textsim3').style.fontSize = '12pt'
+            document.getElementById('textsim4').style.bottom = '21%'
+            document.getElementById('textsim4').style.fontSize = '12pt'
+            document.getElementById('choices').style.top = '-3%'
+            document.getElementById('choices').style.left = '27%'
+            document.getElementById('choices').style.height = '26em'
+            document.getElementById('choices').style.width = '26em'
             }
             else{
                 return
@@ -895,6 +933,7 @@ font-size: 3em;
     function choiceactivate(){
         checkforrepeat()
         function checkforrepeat(){
+        document.getElementById("shadow").style.display = "block"
         c1check = JSON.parse(localStorage.getItem("c1"))
         c2check = JSON.parse(localStorage.getItem("c2"))
         c3check = JSON.parse(localStorage.getItem("c3"))
